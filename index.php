@@ -24,7 +24,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="#">Contact Us</a></li>
-            <a href="#"><img src="photos/login.png" alt="login button" height="25px"></a>
+            <a href="login.php"><img src="photos/login.png" alt="login button" height="25px"></a>
         </ul>
     </div>
 </nav>
@@ -70,8 +70,6 @@
             <h1 class="menu-txt">Menu</h1>
             <img src="photos/menu-img.png" alt="Menu icon" class="menu-icon">
         </div>
-
-
         <div class="category-contaier">
             <div class="coffee-filter">
                 <div class="box">
@@ -99,6 +97,25 @@
                 <i class="bi bi-pencil-square"></i>
                 <button class="price">2,99 Euro</button>
             </div>
+        </div>
+    </section>
+
+
+    <section class="contact-page4">
+        <div class="contact-form-container">
+            <form class="form" action="#">
+                <input type="text" name="firstname" placeholder="Your name..">
+                <input type="email" name="email" placeholder="Your email..">
+                <textarea name="massege" cols="33" rows="1" placeholder="Enter your message here ..."></textarea>
+                <input type="submit">
+            </form>
+
+
+
+        </div>
+
+        <div class="contact-txt">
+            <h1 class="coffee-word">Contact <br><img class="line" src="photos/Line%201.png" alt=""> Us</h1>
         </div>
 
     </section>

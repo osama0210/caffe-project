@@ -1,0 +1,327 @@
+postion-fix{
+
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo{
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.li-container{
+    width: 400px;
+    height: 50px;
+    margin-right: 100px;
+    margin-top: 30px;
+
+}
+
+.li-container ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+
+
+}
+
+.li-container ul a{
+    color: rgba(55, 20, 6, 1);
+    text-decoration: none;
+}
+
+
+
+
+
+
+main{
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.page1{
+    background: rgba(234, 233, 226, 1);
+    background: url("photos/17 coffee.png"), url("photos/coffee.bg.png");
+    background-size: 750px, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right, center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.home-txt-container{
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+
+.title{
+    margin: 0px 0px 0px 60px;
+    font-size: clamp(5em, 9vw, 12em);
+    color: rgba(0, 0, 0, 0.80);
+}
+
+.coffee-word{
+    background: #986259;
+    background: linear-gradient(to right, #986259 0%, #371406 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.sub-txt{
+    margin: 10px 0px 0px 60px;
+}
+
+
+.menu-btn{
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 70px;
+    margin-left: 60px;
+    color: white;
+    border: none;
+    background: rgb(152,98,89);
+    background: linear-gradient(90deg, rgba(152,98,89,1) 0%, rgba(55,20,6,1) 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page2{
+    width: 100%;
+    height: 60vh;
+    background-image: url("photos/cup2-bg.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 300px;
+}
+
+.page2-content{
+    display: flex;
+    justify-content: center;
+}
+
+.txt-container{
+    text-align: center;
+    width: 650px;
+    margin-top: 4em;
+}
+
+.our-story{
+    color: rgba(0, 0, 0, 0.79);
+    font-size: clamp(3em, 4vw, 7em);
+}
+
+.our-story-txt{
+    color: rgba(55, 20, 6, 1);
+    font-size: clamp(1em, 1.2vw, 2em);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page3{
+    width: 100%;
+    height: 200vh;
+    background-color: rgba(227, 223, 212, 1);
+}
+
+.menu-container{
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 60px;
+}
+
+.menu-txt{
+    color: rgba(0, 0, 0, 0.79);
+    font-size: clamp(3em, 4vw, 7em);
+}
+
+.menu-icon{
+    max-width: 4em;
+    min-width: 2em;
+}
+
+
+
+.category-contaier{
+    display: flex;
+    justify-content: space-between;
+}
+
+.coffee-filter{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.box{
+    height: 2em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(234, 233, 226, 1);
+    border-radius: 50px;
+    margin-left: 60px;
+}
+
+.box:hover input{
+    width: 400px;
+}
+
+.box input{
+    width: 0;
+    outline: none;
+    border: none;
+    transition: 0.8s;
+    background: transparent;
+}
+
+.box a .bi{
+    color: rgba(55, 20, 6, 1);
+    font-size: 1em;
+}
+
+
+.category{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.79);
+    font-size: clamp(1em, 1.4vw, 3em);
+
+}
+
+
+.add-items-btn{
+    width: 140px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    background: rgb(152,98,89);
+    background: linear-gradient(90deg, rgba(152,98,89,1) 0%, rgba(55,20,6,1) 100%);
+}
+
+
+.bi-plus{
+    font-size: 25px;
+}
+
+
+
+.item-container{
+    width: 600px;
+    height: 130px;
+    border-radius: 16px;
+    margin: 3em 2em 2em 60px;
+    padding: 1em;
+    border: 1px solid rgba(152, 98, 89, 1);
+}
+
+.bi-pencil-square{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.price{
+    width: 110px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: -1.3em;
+    color: white;
+    border: none;
+    background: rgb(152,98,89);
+    background: linear-gradient(90deg, rgba(152,98,89,1) 0%, rgba(55,20,6,1) 100%);
+}
+
+.edit-container{
+    display: flex;
+    justify-content: space-between;
+}

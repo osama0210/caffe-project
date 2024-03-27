@@ -104,8 +104,8 @@
     <section class="contact-page4">
         <div class="contact-form-container">
             <form class="form" action="#">
-                <input type="text" name="firstname" placeholder="Your name..">
-                <input type="email" name="email" placeholder="Your email..">
+                <input class="contact-input" type="text" name="firstname" placeholder="Your name..">
+                <input class="contact-input" type="email" name="email" placeholder="Your email..">
                 <textarea name="massege" cols="33" rows="1" placeholder="Enter your message here ..."></textarea>
                 <input type="submit">
             </form>

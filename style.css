@@ -368,7 +368,7 @@ form{
     gap: 2.5em;
 }
 
-.form input{
+.contact-input{
     width: 400px;
     background: transparent;
     border: none;
@@ -420,5 +420,63 @@ input[type=submit]{
 
 
 
+
+
+
+
+
+
+
+.login-page{
+    background: rgba(234, 233, 226, 1);
+    background: url("photos/coffee.bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.login-title{
+    margin: 0px;
+    color: rgba(55,20,6,1);
+    font-size: clamp(2em, 2.5vw, 4em);
+}
+
+.login-txt{
+    margin: 0px;
+    font-size: clamp(1em, 1.2vw, 2em);
+}
+
+.input-box{
+    display: flex;
+    width: 540px;
+}
+
+.user-password{
+    width: 300px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(55,20,6,1);
+}
+
+.bi-person-fill{
+    margin-left: 100px;
+}
+
+.bi-lock{
+    margin-left: 100px;
+}
+
+
+.submit{
+    margin-left: 100px;
+}
 
 

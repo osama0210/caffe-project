@@ -20,8 +20,9 @@
     <div class="li-container">
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="index.php">About</a></li>
+            <li><a href="index.php">Menu</a></li>
+            <li><a href="index.php">Contact Us</a></li>
             <a href="login.php"><img src="photos/login.png" alt="login button" height="25px"></a>
         </ul>
     </div>

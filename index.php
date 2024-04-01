@@ -1,3 +1,15 @@
+<?php
+    require_once ("connectie.php");
+/**
+ * @var $connect;
+ */
+
+$sql = "SELECT * FROM `caffe_menu`";
+$stmt = $connect->query($sql);
+$result = $stmt -> fetchAll();
+?>x
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +23,6 @@
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
     <title>Document</title>
 </head>
 <body>
@@ -21,17 +32,18 @@
     <div class="logo"><img src="photos/logo.png" alt="" height="35px"> COFFEE</div>
     <div class="li-container">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#Contact">Contact Us</a></li>
             <a href="login.php"><img src="photos/login.png" alt="login button" height="25px"></a>
         </ul>
     </div>
 </nav>
 
 
-<main>
-    <section class="page1">
+
+    <section id="Home" class="page1">
 
         <div class="home-txt-container">
             <h1 class="title">
@@ -49,7 +61,7 @@
     </section>
 
 
-    <section class="page2">
+    <section id="About" class="page2">
         <div class="page2-content">
             <div class="txt-container">
                 <h1 class="our-story">Our story</h1>
@@ -65,7 +77,7 @@
     </section>
 
 
-    <section class="page3">
+    <section id="Menu" class="page3">
         <div class="menu-container">
             <h1 class="menu-txt">Menu</h1>
             <img src="photos/menu-img.png" alt="Menu icon" class="menu-icon">
@@ -86,9 +98,11 @@
             </div>
             <button class="add-items-btn"><i class="bi bi-plus"></i>Add items</button>
         </div>
+    <?php
 
-
+        ?>
         <div class="item-container">
+
             <h3>Latte</h3>
             <p>Enjoy our classic latte! It's like a warm hug in a cup. Made with rich espresso and creamy milk, it's
                 perfect anytime you need a cozy pick-me-up.</p>
@@ -101,7 +115,7 @@
     </section>
 
 
-    <section class="contact-page4">
+    <section id="Contact" class="contact-page4">
         <div class="contact-form-container">
             <form class="form" action="#">
                 <input class="contact-input" type="text" name="firstname" placeholder="Your name..">
@@ -120,7 +134,6 @@
 
     </section>
 
-</main>
 
 </body>
 </html>

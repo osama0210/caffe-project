@@ -6,10 +6,14 @@ postion-fix{
 body{
     margin: 0;
     padding: 0;
+
     font-family: "Roboto", sans-serif;
 
 }
 
+main{
+    scroll-behavior: smooth;
+}
 
 nav{
     display: flex;
@@ -18,6 +22,14 @@ nav{
     top: 0;
     left: 0;
     right: 0;
+}
+
+nav ul li a{
+    transition: .3s;
+}
+
+nav ul li a:hover{
+    color: #986259;
 }
 
 .logo{
@@ -55,12 +67,6 @@ nav{
 
 
 
-
-main{
-    width: 100%;
-    height: 100%;
-
-}
 
 
 .page1{
@@ -200,9 +206,6 @@ main{
 
 
 
-
-
-
 .page3{
     width: 100%;
     height: 200vh;
@@ -218,11 +221,13 @@ main{
 .menu-txt{
     color: rgba(0, 0, 0, 0.79);
     font-size: clamp(3em, 4vw, 7em);
+    margin-top: 1.5em;
 }
 
 .menu-icon{
     max-width: 4em;
     min-width: 2em;
+    margin-top: 2em;
 }
 
 
@@ -402,14 +407,6 @@ input[type=submit]{
 
 }
 
-/*hr{*/
-/*    height: 3px;*/
-/*    width: 200px;*/
-/*    margin: 2em 0px 0px 20px;*/
-/*    border: none;*/
-/*    border-radius: 20px;*/
-/*    background-image: linear-gradient(90deg, rgba(152,98,89,1) 0%, rgba(55,20,6,1) 100%);*/
-/*}*/
 
 
 .line{
@@ -478,5 +475,4 @@ input[type=submit]{
 .submit{
     margin-left: 100px;
 }
-
 

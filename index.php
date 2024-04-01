@@ -1,11 +1,11 @@
 <?php
     require_once ("connectie.php");
 /**
- * @var $connect;
+ * @var $pdo;
  */
 
 $sql = "SELECT * FROM `caffe_menu`";
-$stmt = $connect->query($sql);
+$stmt = $pdo->query($sql);
 $result = $stmt -> fetchAll();
 ?>x
 

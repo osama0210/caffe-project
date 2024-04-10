@@ -4,7 +4,7 @@ require_once("connectie.php");
  * @var $connect ;
  */
 
-
+$sql = "SELECT * FROM `caffe_menu`";
 
 ?>
 

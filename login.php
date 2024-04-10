@@ -1,3 +1,10 @@
+<?php
+include_once ('login-code.php');
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +18,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="script.js">
     <title>Document</title>
 </head>
@@ -30,20 +38,21 @@
 
 
 <section class="login-page">
-        <form class="form" action="">
+        <form class="form" method="post" action="login-code.php">
             <h1 class="login-title">Welcome back</h1>
             <p class="login-txt">Welcome back! Please enter your details.</p>
             <div class="input-box">
                 <i class="bi bi-person-fill"></i>
-                <input class="user-password" type="text" placeholder="Username" required>
+                <input class="user-password" name="username" type="text" placeholder="Username" required>
             </div>
             <div class="input-box">
                 <i class="bi bi-lock"></i>
-                <input class="user-password" type="password" placeholder="Password" required>
+                <input class="user-password" name="password" type="password" placeholder="Password" required>
             </div>
-            <input class="submit" type="submit">
+            <input class="submit" type="submit" name="login">
         </form>
 
 </section>
 </body>
 </html>
+

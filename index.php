@@ -1,13 +1,12 @@
 <?php
-    require_once ("connectie.php");
+require_once("connectie.php");
 /**
- * @var $pdo;
+ * @var $connect ;
  */
 
-$sql = "SELECT * FROM `caffe_menu`";
-$stmt = $pdo->query($sql);
-$result = $stmt -> fetchAll();
-?>x
+
+
+?>
 
 
 <!doctype html>
@@ -42,65 +41,61 @@ $result = $stmt -> fetchAll();
 </nav>
 
 
+<section id="Home" class="page1">
 
-    <section id="Home" class="page1">
+    <div class="home-txt-container">
+        <h1 class="title">
+            All we need <br>
+            is <span class="coffee-word">coffee</span>
+        </h1>
+        <p class="sub-txt">
+            Discover great coffee and hospitality with us. Come in and
+            enjoy your favorite brew!
+        </p>
 
-        <div class="home-txt-container">
-            <h1 class="title">
-                All we need <br>
-                is <span class="coffee-word">coffee</span>
-            </h1>
-            <p class="sub-txt">
-                Discover great coffee and hospitality with us. Come in and
-                enjoy your favorite brew!
-            </p>
+        <button class="menu-btn">Menu</button>
+    </div>
 
-            <button class="menu-btn">Menu</button>
+</section>
+
+
+<section id="About" class="page2">
+    <div class="page2-content">
+        <div class="txt-container">
+            <h1 class="our-story">Our story</h1>
+            <p class="our-story-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque velit,
+                aliquet ac placerat vitae,
+                lacinia eu leo. Mauris at arcu at dolor hendrerit mattis sit amet in arcu. Duis laoreet sit amet
+                ligula nec dignissim. Cras enim mi, volutpat sed fermentum vel, gravida id tortor. Donec in bibendum
+                mauris. Nulla euismod quam sed ultrices vestibulum. Donec eu ex tortor. Duis id sollicitudin arcu,
+                eget porta odio. Vivamus a neque justo. Maecenas non pharetra erat. Donec aliquet, mi sed
+                pharetra.</p>
         </div>
+    </div>
+</section>
 
-    </section>
 
-
-    <section id="About" class="page2">
-        <div class="page2-content">
-            <div class="txt-container">
-                <h1 class="our-story">Our story</h1>
-                <p class="our-story-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque velit,
-                    aliquet ac placerat vitae,
-                    lacinia eu leo. Mauris at arcu at dolor hendrerit mattis sit amet in arcu. Duis laoreet sit amet
-                    ligula nec dignissim. Cras enim mi, volutpat sed fermentum vel, gravida id tortor. Donec in bibendum
-                    mauris. Nulla euismod quam sed ultrices vestibulum. Donec eu ex tortor. Duis id sollicitudin arcu,
-                    eget porta odio. Vivamus a neque justo. Maecenas non pharetra erat. Donec aliquet, mi sed
-                    pharetra.</p>
+<section id="Menu" class="page3">
+    <div class="menu-container">
+        <h1 class="menu-txt">Menu</h1>
+        <img src="photos/menu-img.png" alt="Menu icon" class="menu-icon">
+    </div>
+    <div class="category-contaier">
+        <div class="coffee-filter">
+            <div class="box">
+                <input type="text" placeholder="Search...">
+                <a href="#">
+                    <i class="bi bi-search"></i>
+                </a>
             </div>
+            <div class="category">Most popular</div>
+            <div class="category">Coffee</div>
+            <div class="category">Tea</div>
         </div>
-    </section>
+    </div>
 
 
-    <section id="Menu" class="page3">
-        <div class="menu-container">
-            <h1 class="menu-txt">Menu</h1>
-            <img src="photos/menu-img.png" alt="Menu icon" class="menu-icon">
-        </div>
-        <div class="category-contaier">
-            <div class="coffee-filter">
-                <div class="box">
-                    <input type="text" placeholder="Search...">
-                    <a href="#">
-                        <i class="bi bi-search"></i>
-                    </a>
-                </div>
-                <div class="category">Most popular</div>
-                <div class="category">Coffee</div>
-                <div class="category">Tea</div>
-
-
-            </div>
-            <button class="add-items-btn"><i class="bi bi-plus"></i>Add items</button>
-        </div>
-    <?php
-
-        ?>
+    <div class="menu-container2">
         <div class="item-container">
 
             <h3>Latte</h3>
@@ -112,27 +107,28 @@ $result = $stmt -> fetchAll();
                 <button class="price">2,99 Euro</button>
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
 
-    <section id="Contact" class="contact-page4">
-        <div class="contact-form-container">
-            <form class="form" action="#">
-                <input class="contact-input" type="text" name="firstname" placeholder="Your name..">
-                <input class="contact-input" type="email" name="email" placeholder="Your email..">
-                <textarea name="massege" cols="33" rows="1" placeholder="Enter your message here ..."></textarea>
-                <input type="submit">
-            </form>
+<section id="Contact" class="contact-page4">
+    <div class="contact-form-container">
+        <form class="form" action="#">
+            <input class="contact-input" type="text" name="firstname" placeholder="Your name..">
+            <input class="contact-input" type="email" name="email" placeholder="Your email..">
+            <textarea name="massege" cols="33" rows="1" placeholder="Enter your message here ..."></textarea>
+            <input type="submit">
+        </form>
 
 
+    </div>
 
-        </div>
+    <div class="contact-txt">
+        <h1 class="coffee-word">Contact <br><img class="line" src="photos/Line%201.png" alt=""> Us</h1>
+    </div>
 
-        <div class="contact-txt">
-            <h1 class="coffee-word">Contact <br><img class="line" src="photos/Line%201.png" alt=""> Us</h1>
-        </div>
-
-    </section>
+</section>
 
 
 </body>

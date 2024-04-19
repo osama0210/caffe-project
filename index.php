@@ -1,10 +1,8 @@
 <?php
 require_once("connectie.php");
 /**
- * @var $connect ;
+ * @var $connection ;
  */
-
-$sql = "SELECT * FROM `caffe_menu`";
 
 ?>
 
@@ -22,7 +20,7 @@ $sql = "SELECT * FROM `caffe_menu`";
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Coffee</title>
 </head>
 <body>
 
@@ -35,7 +33,7 @@ $sql = "SELECT * FROM `caffe_menu`";
             <li><a href="#About">About</a></li>
             <li><a href="#Menu">Menu</a></li>
             <li><a href="#Contact">Contact Us</a></li>
-            <a href="login.php"><img src="photos/login.png" alt="login button" height="25px"></a>
+            <li><a href="login-page.php"><img src="photos/login.png" alt="login button" height="25px"></a></li>
         </ul>
     </div>
 </nav>
@@ -82,33 +80,54 @@ $sql = "SELECT * FROM `caffe_menu`";
     </div>
     <div class="category-contaier">
         <div class="coffee-filter">
+
+
+
             <div class="box">
-                <input type="text" placeholder="Search...">
-                <a href="#">
-                    <i class="bi bi-search"></i>
-                </a>
+                    <form method="get">
+                        <input type="text" name="search" placeholder="Search...">
+                    </form>
+                <i class="bi bi-search"></i>
+
             </div>
+
+
+
+
             <div class="category">Most popular</div>
             <div class="category">Coffee</div>
             <div class="category">Tea</div>
         </div>
     </div>
+    <div class='menu-container2'>
+    <?php
+    if (isset($_GET['search'])){
+        $searchTerm = $_GET['search'];
+        $searchQuery = "SELECT * FROM caffe_menu WHERE naam LIKE :searchInput";
+        $stmt = $connection->prepare($searchQuery);
+        $searchParam = "%" . $searchTerm . "%";
+        $stmt->bindParam(":searchInput", $searchParam); // Corrected here
+        $stmt->execute();
+    }else{
+        $stmt = $connection->query("SELECT * FROM caffe_menu");
+    }
 
 
-    <div class="menu-container2">
-        <div class="item-container">
+    while ($menu = $stmt->fetch()) {
+        echo
+            "<div class='item-container'>" .
+            "<h1>" . $menu['naam'] . "</h1>" .
+            "<p>" . $menu ['beschrijving'] . "</p>" .
+            "<div class='edit-container'>" .
+            "<button class='price'>" . $menu['prijs'] . " Euro" . "</button>"
+            . "</div>" .
+            "</div>"
+            ;
+    }
 
-            <h3>Latte</h3>
-            <p>Enjoy our classic latte! It's like a warm hug in a cup. Made with rich espresso and creamy milk, it's
-                perfect anytime you need a cozy pick-me-up.</p>
-
-            <div class="edit-container">
-                <i class="bi bi-pencil-square"></i>
-                <button class="price">2,99 Euro</button>
-            </div>
+    ?>
         </div>
 
-    </div>
 </section>
 
 

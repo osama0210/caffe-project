@@ -4,7 +4,23 @@ include_once "connectie.php";
  * @var $connection ;
  */
 
+session_start();
+if (isset($_SESSION['username'])) {
 
+} else {
+    header("Location: login-page.php");
+}
+
+if (isset($_POST["add-item"])) {
+    $sql = "INSERT INTO caffe_menu (naam, beschrijving, prijs)
+        VALUE(:naam, :beschrijving, :prijs)";
+    $stmt = $connection->prepare($sql);
+    $stmt->bindParam(":naam", $_POST['naam']);
+    $stmt->bindParam(":beschrijving", $_POST['beschrijving']);
+    $stmt->bindParam(":prijs", $_POST['prijs']);
+    $stmt->execute();
+
+}
 
 ?>
 
@@ -22,7 +38,7 @@ include_once "connectie.php";
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Admin panel</title>
 </head>
 <body>
 <nav>
@@ -33,79 +49,73 @@ include_once "connectie.php";
             <li><a href="index.php">About</a></li>
             <li><a href="index.php">Menu</a></li>
             <li><a href="index.php">Contact Us</a></li>
-            <a href="login.php"><img src="photos/login.png" alt="login button" height="25px"></a>
+            <div class="logout-btn">
+                <img src="photos/login.png" alt="login button" height="25px">
+                <li><a href="logout.php">Logout</a></li>
+            </div>
         </ul>
     </div>
 </nav>
 
 <section class="admin-panel">
-
     <div class="crud-container">
         <h1 class="menu-txt admin-txt">Café Admin</h1>
         <div class="category-contaier admin-filter">
             <div class="coffee-filter">
-                <div class="box box2">
+
+
+
+                <div class="box2">
                     <input type="text" placeholder="Search...">
                     <a href="#">
                         <i class="bi bi-search"></i>
                     </a>
                 </div>
-                <button class="add-items-btn"><i class="bi bi-plus"></i>Add items</button>
+
+
+
+                <a class="add-items-btn" href="#popup_add"><i class="bi bi-plus"></i>Add items</a>
+                <div id="popup_add" class="overlay">
+
+                    <div class="popup">
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            <form action="admin.php" method="post">
+                                <input class="add-input" type="text" name="naam" placeholder="Name">
+                                <input class="add-input" type="text" name="beschrijving" placeholder="Description">
+                                <input class="add-input" type="number" name="prijs" placeholder="Price">
+                                <input name="add-item" type="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="tabel-container">
-            <table>
-                <thead>
-                <tr>
-                    <th>PRODUCT</th>
-                    <th>description</th>
-                    <th>Price</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody id="itemTable">
-                <tr>
-                    <td>latte</td>
-                    <td>---------</td>
-                    <td>3</td>
-                    <td>
-                        <div class="edit-button-container flex">
-                            <a class="edit-button" href="#popup"><i class="bi bi-pencil-square"></i>Edit</a>
-                        </div>
-                        <div id="popup" class="overlay">
-                            <div class="popup">
-                                <a class="close" href="#game-creators">&times;</a>
-                                <div class="content">
+        <?php
+        echo "<div class='table-header'>" .
+            "<p>Name</p>" .
+            "<p>Description</p>" .
+            "<p>Price</p>" .
+            "<p>Action</p>" .
+            "</div>";
+
+        $stmt = $connection->query("SELECT * FROM `caffe_menu`");
+
+        while ($menu = $stmt->fetch()) {
+            echo "<div class='table-body'>" .
+                "<p>" . $menu['naam'] . "</p>" .
+                "<p class='beschrijving-txt'>" . $menu['beschrijving'] . "</p>" .
+                "<p>" . $menu['prijs'] . " Euro" . "</p>" .
+                "<div class='edit-container'><button class='add-items-btn'><a href='edit-item.php?id=" . $menu['id'] . "'>Edit</a></button>".
+                "<button class='add-items-btn'><a href='delete-item.php?id=" . $menu['id'] . "'>Delete</a></button>".
+
+                "</div>" .
+                "</div>";
+        }
 
 
-                                    <?php
-                                    $sql = "INSERT INTO caffe_menu (naam, beschrijving, prijs)
-                                    values (:naam, :beschrijving, :prijs)";
-
-                                    $stmt = $connection->prepare($sql);
-                                    $stmt->bindParam(":naam", $_POST['name']);
-                                    $stmt->bindParam(":beschrijving", $_POST['description']);
-                                    $stmt->bindParam(":prijs", $_POST['price']);
-
-                                    ?>
-
-                                    <form action="admin.php" method="post">
-                                        <input class="edit-input" type="text" name="name" placeholder="Name">
-                                        <input class="edit-input" type="text" name="description"
-                                               placeholder="Description">
-                                        <input class="edit-input" type="number" name="price" placeholder=Price>
-                                        <input type="submit">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-
-                </tr>
-                </tbody>
-            </table>
-        </div>
+        ?>
 
     </div>
 </section>

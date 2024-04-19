@@ -11,6 +11,3 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 $connection = new PDO("mysql:dbname=mydatabase;host=mysql_db" , "root" , "rootpassword");
-
-
-?>
